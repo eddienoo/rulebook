@@ -1,0 +1,19 @@
+#form-container {
+	max-width:250px;
+}
+
+#form-left{
+		width:100%;
+		float:left;
+}
+
+
+
+#form-text-area{
+	width:100%;
+	min-height:200px;
+}
+
+#form-element{
+	width:100%;
+}

@@ -1,0 +1,358 @@
+/* AB HIER IST DER ScreenBEREICH! */
+
+
+
+@media screen {
+	
+body {
+	background-color:#faffda !important;
+}
+
+#notice {
+font-size:larger;	
+float:right;
+}
+
+#center {
+    display: table;
+    margin: 0 auto;
+    float:none;
+    width:100%;
+	max-width:767px;
+	padding:0px;
+}
+
+#content {
+	border-style: solid; 
+	border-width: 0px; 
+	background-color:#dbea7f;
+	width:100%;
+	margin-top:50px;
+	padding-top:10px;
+	max-width: 767px;
+}
+	
+#navbar-nav {
+	float:right;
+	font-size:medium;
+}
+
+@media (max-width: 767px) {
+	#navbar-nav {
+		float:none;
+	}
+}
+
+#navbar-default {
+	max-width:767px;
+	border:none;	
+    margin: 0 auto;
+}
+
+#navbar-container {
+	background-color:#FFCF46;
+	border-style:none;
+	
+	
+}
+
+#bs-example-navbar-collapse-6 {
+	border-style:none;
+}
+
+.navbar-header {
+
+}
+
+.dropdown-menu {
+	background-color: #F8D183 !important;
+	border-style:none !important;
+	
+}
+
+
+#search-form {
+	max-width:350px;
+	padding-bottom:32px;
+	
+}
+
+#search-textfield {
+	width:70%;
+	float:left;
+	height:32px;
+}
+
+#search-button {
+	width:30%;
+	float:right;
+	height:32px;
+}
+
+
+
+
+#category-title {
+	padding: 0px 5px 0px 25px;
+	font-weight: 600;
+	font-size: x-large;
+	margin: 20px 0 20px 0;
+	
+}
+
+
+
+#element-container {
+	border-style: solid; 
+	border-width: 1px; 
+	height:100%;
+	width: 100%;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	background-color: #AEF265;
+}
+
+#element-head {
+	border-style: solid; 
+	border-width: 0px 0 0px 0; 
+	width: 100%;
+	margin: 0px 0 0px 0;
+
+	padding: 0 0px 0 0px;
+	background-color: #97d554;
+
+
+}
+
+#element-head-title {
+	font-weight:600;
+	font-size:larger;
+	width:50%;	
+}
+
+#element-head-text {
+	width:50%;
+	text-align:right;
+	height:100%;
+}
+
+#element-head2 {
+	border-width: 0px 0 1px 0; 
+	width: 100%;
+	margin: 0px 0 0px 0;
+	padding: 0 15px 0 15px;
+}
+
+#element-head2-text {
+	
+	padding: 0 2px 0 2px;
+	height:100%;
+	float:left;
+	width:100%;
+
+}
+
+#element-head2-tools {
+	
+	padding: 0 2px 0 2px;
+	height:100%;
+	float:right;
+	text-align:right;
+	width:50%;
+	
+}
+
+#element-head2-valid {
+	
+	padding: 0 2px 0 2px;
+	height:100%;
+	display:none;
+}
+
+
+#element-content {
+	border-style: solid; 
+	border-width: 1px 0 1px 0; 
+	height:100%;
+	min-height:60px;
+	width: 100%;
+	margin: 0px 0 0px 0;
+	border-radius:0px;
+	background-color: #EDF6B4;
+}
+
+#element-footer {
+	border-style: solid; 
+	border-width: 0px 0 0px 0; 
+	width: 100%;
+	margin: 0px 0 0px 0;
+
+	padding: 0px 15px 0px 15px;
+	text-align:center;
+}
+
+#index-table {
+	max-width: 250px;
+}
+
+}
+
+
+
+
+/* AB HIER IST DER DRUCKBEREICH! */
+
+
+
+@media print {
+	
+
+	
+#content {
+	border-style: solid; 
+	border-width: 0px; 
+	
+	position:absolute;
+	
+	
+}
+
+#sidebar {
+	border-style: solid; 
+	border-width: 0px;
+	min-height:400px;
+	height:100%;
+	padding: 37px 0 0 0;
+	width:20%;
+	overflow:hidden;
+	display:none;		
+}
+
+
+
+#navbar-menu{
+	width:100%;
+	display:none;
+} 
+
+#navbar-login{
+	width:100%;
+	background-color:rgb(159, 224, 89);
+	display:none;
+} 
+
+#navbar-default {
+	border-style:none;
+	position:fixed;
+	display:none;
+}
+
+#category-title {
+	padding: 0px 5px 0px 25px;
+	font-weight: 600;
+	font-size: x-large;
+	margin: 20px 0 20px 0;
+	
+}
+
+#list-head {
+	display:none;
+}
+
+#element-container {
+	border-style: solid; 
+	border-width: 0px; 
+	height:100%;
+	width: 100%;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	page-break-after:always;
+	float:none;
+	
+}
+
+#element-head {
+	border-style: solid; 
+	border-width: 1px 1px 0px 1px; 
+	width: 100%;
+	margin: 0px 0 0px 0;
+
+	padding: 0 0px 0 0px;
+
+
+}
+
+#element-head-title {
+	font-weight:600;
+	font-size:larger;
+	width:50%;	
+}
+
+#element-head-text {
+	width:50%;
+	text-align:right;
+	height:100%;
+}
+
+#element-head2 {
+	border-style:solid;
+	border-width: 0px 1px 1px 1px; 
+	width: 100%;
+	margin: 0px 0 0px 0;
+	padding: 0 15px 0 15px;
+	
+}
+
+#element-head2-text {
+	
+	padding: 0 2px 0 2px;
+	height:100%;
+	width:50%;
+}
+
+#element-head2-tools {
+	
+	padding: 0 2px 0 2px;
+	height:100%;
+	display:none;
+}
+
+#element-head2-valid {
+	
+	padding: 0 2px 0 2px;
+	height:100%;
+	width:50%;
+}
+
+
+
+#element-content {
+	border-style: solid; 
+	border-width: 1px 1px 1px 1px; 
+	height:100%;
+	min-height:60px;
+	width: 100%;
+	margin: 0px 0 0px 0;
+	border-radius:0px;
+	
+}
+
+#element-footer {
+	border-style: solid; 
+	border-width: 0px 0 0px 0; 
+	width: 100%;
+	margin: 0px 0 0px 0;
+
+	padding: 0px 15px 0px 15px;
+	text-align:center;
+}
+
+#index-table {
+	padding: 5px 20px 0 0;
+}
+
+#bottom-links {
+	display:none;
+}
+
+}

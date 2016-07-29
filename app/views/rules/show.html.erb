@@ -1,0 +1,6 @@
+<% @title= @rule.title %>
+<% @rules=Rule.where(id:@rule.id)%>
+<%= render 'listrules'%>
+<div class="bottom-links">
+<%= link_to 'Back', :back %>
+</div>

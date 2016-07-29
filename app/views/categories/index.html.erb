@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<% @title= "Kategorien" %>
+
+<table id='index-table' class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        
+        <td><%= link_to 'Umbenennen', edit_category_path(category) %></td>
+        <td><%= link_to 'Löschen', category, method: :delete, data: { confirm: 'Bist du sicher?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Neue Kategorie', new_category_path %>

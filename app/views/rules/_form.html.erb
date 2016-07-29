@@ -1,0 +1,73 @@
+<div id="form-container" class="col-m-2">
+<%= form_for(@rule) do |f| %>
+    <% if @rule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rule.errors.count, "error") %> prohibited this rule from being saved:</h2>
+
+      <ul>
+      <% @rule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <div class="col-s-3" id="form-left">
+    	
+
+         
+  		<div class="form-group">
+    		<%= f.label :title %><br>
+    		<%= f.text_field :title, {:id => "form-element"} %>
+  		</div>
+  		<div class="form-group">
+    		<%= f.label :content %><br>
+    		<%= f.text_area :content, {:id => "form-text-area"}%>
+  		</div>
+
+  		
+
+
+  		
+  		<div class="form-group">
+  			<%= f.label :Gremium %><br>
+   			<%= f.collection_select :committee_id, Committee.all, :id, :name, :include_blank => true%>
+        </div>
+  		
+  		<div class="form-group">
+  			<%= f.label :Kategorien %><br>
+			<%= collection_select :rule, :category_ids, Category.all, :id, :name, {:selected => @rule.category_ids, :include_blank => false}, {:multiple => true, :size => Category.all.count, :class => 'col_select'} %>
+   		</div>
+  		<div class="form-group">
+    		<%= f.label :Erstellt_am %><br>
+    		<%= f.date_select :created_at %>
+  		</div>
+  		<div class="form-group">
+    		<%= f.label :Bearbeitet_am %><br>
+    		<%= f.date_select :updated_at, selected: Date.today %>
+  		</div>
+  		<div class="form-group">
+    		<%= f.label :Gültig_bis %><br>
+    		<%= f.date_select :valid_until, :include_blank => true %>
+  		</div>
+  		
+  		<div class="form-group">
+    		<%= f.label :Gültig %><br>
+    		<% if @rule.is_valid==nil%>
+    			<%= f.check_box :is_valid, {:checked=>true} %>
+    		<% else%>
+    			<%= f.check_box :is_valid %>
+    		<%end%>
+  		</div>
+  		
+  		<div class="actions">
+  		<%= f.submit :Speichern %>
+  		</div> 		
+    </div>          
+  
+<% end %>
+
+
+
+
+</div>

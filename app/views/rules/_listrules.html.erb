@@ -1,0 +1,70 @@
+
+<% @rules.each do |r|%>
+
+			<div class="row nomargin">
+				<div id="element-container" class='col-xs-12'>
+				  <div class="row-eq-height nomargin">
+				  	
+				  	
+					<div class="col-sm-3 col-xs-4 nopadding" id="element-left">
+						<div id="element-title" class="col-xs-12 padding8 umbruch"> <%= link_to r.title, rule_path(r), method: 'get', :id => "element-title-link" %>  </div>
+						<div id="element-text" class="col-xs-12 padding8" style="margin-top:8px;">
+							<div class="umbruch">
+								
+								<div style="margin-bottom:4px;">
+									<strong>Gremium:</strong></br> <%= r.committee.name %> </br>
+								</div>
+							
+								<div style="margin-bottom:4px;">
+									<% count=r.categories.count %>
+									<% i = 1 %>
+									<% if r.categories.count==1%><strong>Kategorie:</strong> </br><% elsif r.categories.count==0%><%else%><strong>Kategorien:</strong> </br><%end%>											
+									<% r.categories.all.each do |c|%>
+										<% if i==count %>
+											<%= c.name %>
+										<%else%>
+											<%= c.name %></br>
+											<% i=i+1 %>	
+										<% end %>
+									<%end%>
+								</div>
+							
+								<div style="margin-bottom:4px;">
+									<% if r.valid_until!=nil%> <strong>Gültig bis:</strong> </br> <%= r.valid_until.strftime("%d.%m.%y") %> <%end%>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-9 col-xs-8 nopadding">
+						<div id="element-head" class="col-xs-12 umbruch">							
+							<div style="float:left;"> Geändert am: <%= r.updated_at.strftime("%d.%m.%y") %>	</div>						
+						
+							<div style="float:right;">
+							<% if logged_in?%>
+								<%= link_to 'Bearbeiten', edit_rule_path(r), method: 'get'%>
+								<%= link_to 'Löschen', r, method: :delete, data: { confirm: 'Bist du sicher?' }%>
+							<%end%>	
+							</div>						
+						</div>
+						
+						<div id="element-content" class="col-xs-12 umbruch">
+							<%= h(r.content).gsub("\n" , "<br />" ).html_safe%>	
+						</div>
+						
+						
+					</div>					
+				  </div>
+				</div>
+			</div>
+
+<%end%>				
+					
+					
+					
+					
+				
+	
+				
+

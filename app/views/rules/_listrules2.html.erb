@@ -1,0 +1,47 @@
+
+<% @rules.each do |r|%>
+	<%if r.is_valid==true%>
+		<% if r.valid_until!=nil and r.valid_until.to_date<Date.today%>
+		<% else%>
+			<div class="row">
+				<div id="element-container" class='col-xs-12'>
+				
+					
+					<div id="element-head-title" class="col-xs-6"> <%= link_to r.title, rule_path(r), method: 'get', :id => "element-title-link" %>  </div>
+					<div id="element-head-text" class="col-xs-6"> <%= r.committee.name %>, <%= r.updated_at.strftime("%d.%m.%y") %></div>
+					
+				
+					<div id="element-content" class="col-xs-12"><%= h(r.content).gsub("\n" , "<br />" ).html_safe%>	</div>
+				
+					
+					
+						<div id="element-foot-text" class="col-xs-4 left">
+							<% count=r.categories.count %>
+							<% i = 1 %>
+							<% if r.categories.count==1%>Kategorie: <% elsif r.categories.count==0%><%else%>Kategorien: <%end%>											
+							<% r.categories.all.each do |c|%>
+								<% if i==count %>
+									<%= c.name %>
+								<%else%>
+									<%= c.name %>,
+									<% i=i+1 %>	
+								<% end %>
+							<%end%>	
+						</div>
+					
+						<div id="element-foot-text" class="col-xs-4 center">
+						<% if logged_in?%>
+						<%= link_to 'Bearbeiten', edit_rule_path(r), method: 'get'%>
+						<%= link_to 'Löschen', r, method: :delete, data: { confirm: 'Bist du sicher?' }%>
+						<%end%>
+						</div>
+					
+						<div id="element-foot-text" class="col-xs-4 right">
+						<% if r.valid_until!=nil%> Gültig bis: <%= r.valid_until.strftime("%d.%m.%y") %> <%end%>
+						</div>
+					
+				</div>
+			</div>
+		<%end%>
+	<%end%>
+<%end%>

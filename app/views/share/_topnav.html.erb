@@ -1,0 +1,71 @@
+<nav id="navbar-default" class="navbar navbar-default" role="navigation">
+  <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
+  <div class="container-fluid" id="navbar-container">
+    <div class="navbar-header">
+      <button id="nav-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%=@title%></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav" id="navbar-nav">
+      	
+      	
+         <li> <%= link_to "Alle Regeln", rules_path, :id => "topnav-main" %> </li>
+ 
+      	<li>
+  			<a id="topnav-main" data-toggle="dropdown" href="#"> Kategorien <span class="caret"></span></a>
+  				<ul class="dropdown-menu">
+    			<% @cat.each do |cat|%>
+					<% if cat.rules.count>0%>
+						<li><%= link_to cat.name, cats_path(cat.id), :id => "nav-links"  %>	</li>
+					<%end%>
+				<%end%>
+  				</ul>
+		</li>
+		<li>
+  			<a id="topnav-main" data-toggle="dropdown" href="#"> Gremien <span class="caret"></span></a>
+  				<ul class="dropdown-menu">
+				<% @com.each do |com|%>
+					<% if Rule.where(committee_id:com.id).count>0%>
+						<li><%= link_to com.name, coms_path(com.id), :id => "nav-links"  %></li>
+					<%end%>
+				<%end%>
+  				</ul>
+		</li>
+		
+		<% if logged_in?%>
+			<li>
+  				<a id="topnav-main" data-toggle="dropdown" href="#"> Erstellen <span class="caret"></span></a>
+  					<ul class="dropdown-menu">
+						<li><%= link_to 'Regel', new_rule_path, :id => "nav-links" %> </li>
+						<li><%= link_to 'Kategorie', new_category_path, :id => "nav-links" %></li>
+						<li><%= link_to 'Gremium', new_committee_path, :id => "nav-links" %></li>
+      	  			</ul>
+			</li>	
+		<%end%>
+
+
+        <li> <%= link_to 'Alte Regeln', old_path, :id => "topnav-main" %> </li>
+        
+        <% if logged_in? == false%>
+		<li>	<%= link_to "Login", :login, :id => "topnav-main" %>	</li>	
+		<%end%>
+		
+		<% if logged_in? == true%>
+		<li>	<%= link_to "Logout", :logout, method: :post, :id => "topnav-main"%>	</li>	
+		<%end%>
+		
+		
+		
+
+
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>

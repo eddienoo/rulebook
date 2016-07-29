@@ -1,0 +1,68 @@
+
+body {
+	font-family:"Liberation Sans",dl_liberation_sans,sans-serif !important;
+}
+
+#main {
+	background-color:#bdaa63;
+	margin-top: 15px;
+	padding: 10px;
+}
+
+#navbar-default {
+	margin-bottom:0px;
+}
+
+#content {
+	min-width: 475px;
+}
+
+#list-head {
+	padding:4px 0 4px 0;
+}
+
+
+#element-container {
+	margin:0 0 0px 0;
+	padding: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-color:#ccc;
+	overflow:hidden;
+	background-color:white;
+}
+
+#element-left {
+	border-style: solid;
+	border-width: 0 1px 0 0;
+	border-color:#ccc;
+	background-color:#eee;
+}
+
+#element-title {
+	font-size:120%;
+	padding:4px 15px 4px 15px;
+	border-style:solid;
+	border-width: 0 0 1px 0;
+	border-color: #f8f8f8;
+}
+
+#element-head {
+	padding: 8px 15px 8px 15px;
+	font-size:smaller;
+	background:linear-gradient(to bottom, #e0e0e0, #cacaca);
+}
+
+#element-content {
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	border-color:#ccc;
+	font-size:90%;
+	padding: 10px 15px 10px 15px;
+	
+}
+
+#element-text {
+	font-size:smaller;	
+}
+

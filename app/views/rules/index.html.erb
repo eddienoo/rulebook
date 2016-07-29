@@ -1,0 +1,23 @@
+
+
+<div class="row nomargin">	
+	<div id="list-head" class="col-xs-12">
+		<p id="notice"><%= notice %></p>
+		<% @title= "Regelbuch" %>	
+
+		<%= form_tag rules_path, :method => 'get' do %>
+  			<div id="search-form" class="form-group">
+    			<%= text_field_tag :search, params[:search], {:id => "search-textfield"}  %>
+    			<%= submit_tag "Suchen", :name => nil, :id => "search-button"  %>
+  			</div>
+		<% end %>
+	</div>
+</div>
+
+
+<div class="row nomargin">
+	<%= render 'listrules'%>
+</div>	
+			
+
+

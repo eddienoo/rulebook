@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>Rulebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+		<div id="main" class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+            <div class="row nomargin"> 	
+         	<div class="col-xs-12 nopadding"><%= render partial: "share/topnav"%></div>
+         	</div>
+        		
+        	<div class="row nomargin">
+        		<div id="content" class="col-xs-12 nopadding"><%= yield %></div>
+        	</div>
+        </div>
+        
+        
+	
+</body>
+</html>

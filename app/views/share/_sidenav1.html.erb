@@ -1,0 +1,51 @@
+
+<nav id="navbar-default" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    
+    <div id="navbar-login"class="col-xs-1">	
+    	<% if current_user %>
+    		<%= current_user.email%>
+      		<%= link_to "Edit", edit_user_path(current_user.id) %>
+      		<%= link_to "Logout", :logout, method: :post %>
+    	<% else %>
+     		<%= link_to "Register", new_user_path %> |
+    		<%= link_to "Login", :login %>
+    	<% end %>
+    	<div>
+    		<p id="notice"><%= flash[:notice] %></p>
+    		<p id="alert"><%= flash[:alert] %></p>
+  		</div>
+    </div>	
+    	
+    <div id="navbar-menu"class="col-xs-1">
+    	<strong><%= link_to "Alle Regeln", rules_path, :id => "nav-links" %></strong>      <br><br>
+    	
+    	<strong> Kategorien:</strong> <br>
+		<% @cat.each do |cat|%>
+			<% if cat.rules.count>0%>
+				<%= link_to cat.name, cats_path(cat.id), :id => "nav-links"  %>	<br>
+			<%end%>
+		<%end%>
+		<br />
+		<strong> Gremien:</strong> <br>
+		<% @com.each do |com|%>
+			<% if Rule.where(committee_id:com.id).count>0%>
+				<%= link_to com.name, coms_path(com.id), :id => "nav-links"  %>	<br>
+			<%end%>
+		<%end%>
+		<br>
+		<strong><%= link_to 'Alte Regeln', old_path, :id => "nav-links" %> <br /></strong><br>
+		
+		<% if logged_in?%>
+			<strong> Erstellen:</strong> <br>
+			<%= link_to 'Neue Regel', new_rule_path, :id => "nav-links" %> <br />
+			<%= link_to 'Neue Kategorie', new_category_path, :id => "nav-links" %><br />
+			<%= link_to 'Neues Gremium', new_committee_path, :id => "nav-links" %><br />
+      	<%end%>
+    	
+
+  
+
+    
+    
+    </div>
+</nav>

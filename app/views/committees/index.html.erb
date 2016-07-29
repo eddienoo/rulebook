@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<% @title= "Gremien" %>
+
+
+<table class="table table-hover" id="index-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @committees.each do |committee| %>
+      <tr>
+        <td><%= committee.name %></td>
+        <td><%= link_to 'Show', committee %></td>
+        <td><%= link_to 'Destroy', committee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Gremium erstellen', new_committee_path %>

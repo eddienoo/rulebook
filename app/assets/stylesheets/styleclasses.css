@@ -1,0 +1,37 @@
+.left {
+	text-align:left;
+}
+
+.center {
+	text-align:center;
+}
+
+.right {
+	text-align:right;
+}
+
+.nopadding {
+	padding: 0px !important;
+}
+
+.nomargin {
+	margin: 0px !important;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.umbruch {
+   overflow:hidden;
+   -moz-hyphens: auto;
+   -o-hyphens: auto;
+   -webkit-hyphens: auto;
+   -ms-hyphens: auto;
+   hyphens: auto;
+}
+
+
